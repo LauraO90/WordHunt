@@ -1,6 +1,7 @@
 import random
 
 from animals import animal_words
+from plants import plant_words
 
 def enter_wordhunt():
     print("Please type your name")
@@ -66,14 +67,17 @@ def get_category_words():
     print("\nPlease choose a category:\n")
 
     print("type a for ANIMALS\n")
+    print("type p for PLANTS\n")
     category_choice = input()
 
     if category_choice == "a":
         print("\nYou chose ANIMALS\n")
         return animal_words
+    elif category_choice == "p":
+        print("\nYou chose PLANTS\n")
+        return plant_words
     else: 
         print("Please choose a valid category")
-        print("type a for ANIMALS\n")
         return get_category_words()
 
 def restart_or_exit():
