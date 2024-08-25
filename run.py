@@ -2,6 +2,7 @@ import random
 
 from animals import animal_words
 from plants import plant_words
+from planets import planet_words
 
 def enter_wordhunt():
     print("Please type your name")
@@ -66,16 +67,20 @@ def get_user_guess(existing_guesses):
 def get_category_words():
     print("\nPlease choose a category:\n")
 
-    print("type a for ANIMALS\n")
-    print("type p for PLANTS\n")
+    print("type a for PLANTS\n")
+    print("type b for ANIMALS\n")
+    print("type c for PLANETS\n")
     category_choice = input()
 
     if category_choice == "a":
-        print("\nYou chose ANIMALS\n")
-        return animal_words
-    elif category_choice == "p":
         print("\nYou chose PLANTS\n")
         return plant_words
+    elif category_choice == "b":
+        print("\nYou chose ANIMALS\n")
+        return animal_words
+    elif category_choice == "c":
+        print("\nYou chose PLANETS\n")
+        return planet_words
     else: 
         print("Please choose a valid category")
         return get_category_words()
