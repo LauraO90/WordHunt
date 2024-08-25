@@ -6,7 +6,7 @@ animal_words = [
     "Dog",
     "Elephant",
     "Kangeroo",
-    "Leemur",
+    "Lemur",
     "Monkey",
     "Pig",
     "Rabbit",
