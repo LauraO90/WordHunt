@@ -41,7 +41,7 @@ def play_wordhunt():
                 current_status += letter
             else:
                 current_status += ' _'
-    print(current_status.strip())
+        print(current_status.strip())
 
     if current_status == active_word:
         print("Well done - you found the word!")
