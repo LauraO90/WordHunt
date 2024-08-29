@@ -7,10 +7,19 @@ from planets import planet_words
 
 def enter_wordhunt():
     print("Please type your name")
-    name = input()
+    name = get_username()
 
     print("Good Luck, lets get started", name)
     play_wordhunt()
+
+
+def get_username():
+    username = input()
+    if len(username) > 1 and username.isalpha():
+        return username
+    else:
+        print("Please enter at least two letters")
+        return get_username()
 
 
 def play_wordhunt():
