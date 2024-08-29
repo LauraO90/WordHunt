@@ -42,8 +42,8 @@ def play_wordhunt():
     number_attempts = 0
     active_word_length = len(active_word)
 
-    print(f"""Let's hunt - you have {number_guesses}
-    attempts to guess the word:""")
+    print(f"Let's hunt - you have {number_guesses} "
+          "attempts to guess the word:")
     print(f"Your word has {active_word_length} letters:")
 
     current_status = ''
@@ -62,8 +62,8 @@ def play_wordhunt():
             if (number_attempts is number_guesses - 1):
                 print(f"You have 1 guess left")
             else:
-                print(f"""You have {number_guesses - number_attempts}
-                guesses left""")
+                print(f"You have {number_guesses - number_attempts} "
+                      "guesses left")
 
             print("Choose your next letter")
         else:
