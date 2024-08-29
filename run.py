@@ -71,9 +71,15 @@ def get_user_guess(existing_guesses):
         print(f"You have already picked {guess}")
         print("Try a new letter")
         return get_user_guess(existing_guesses)
+    elif not guess.isalpha():
+        print("Please choose a letter")
+        return get_user_guess(existing_guesses)
+    elif len(guess) > 1:
+        print("Please choose one letter only")
+        return get_user_guess(existing_guesses)
     else:
         return guess
-
+    
 
 def get_category_words():
     print("\nPlease choose a category:\n")
