@@ -19,6 +19,7 @@ def enter_wordhunt():
     welcome()
     print("Please type your name")
     name = get_username()
+    clear_terminal()
 
     print("Good Luck, lets get started", name)
     play_wordhunt()
