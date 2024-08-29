@@ -27,7 +27,7 @@ def play_wordhunt():
     active_word = random.choice(words)
 
     guesses = []
-    number_guesses = number_letters(active_word) + 1
+    number_guesses = number_letters(active_word) + 2
     number_attempts = 0
 
     print(f"Let's hunt - you have {number_guesses} attempts to guess!")
