@@ -7,22 +7,22 @@ from planets import planet_words
 
 
 def welcome():
-    print("Welcome to Wordhunt!")
+    print("Welcome to WordHunt!\n")
     print("How to play?")
     print("You will have a choice of THREE categories.")
     print("Once you have chosen, you will be presented with a word to guess.")
-    print("Please ensure your guesses are single letters only.")
-    print("Happy hunting!")
+    print("Please ensure your guesses are single letters only.\n")
+    print("Happy hunting!\n")
 
 
 def enter_wordhunt():
     welcome()
-    print("Please type your name")
+    print("Please type your name...")
     name = get_username()
     clear_terminal()
 
     print("Good Luck, lets get started", name)
-    play_wordhunt()
+    play_wordhunt(name)
 
 
 def get_username():
@@ -34,7 +34,7 @@ def get_username():
         return get_username()
 
 
-def play_wordhunt():
+def play_wordhunt(name):
     words = get_category_words()
     active_word = random.choice(words)
 
@@ -80,13 +80,13 @@ def play_wordhunt():
             clear_terminal()
             print("Well done - you found the word!")
             print(current_status)
-            restart_or_exit()
+            restart_or_exit(name)
 
     clear_terminal()
     print("Hard luck, you are out of guesses")
     print(current_status)
     print("The word was", active_word)
-    restart_or_exit()
+    restart_or_exit(name)
 
 
 def get_current_status(active_word, guesses):
@@ -145,12 +145,13 @@ def get_category_words():
         return get_category_words()
 
 
-def restart_or_exit():
-    print("Would you like to play again?")
+def restart_or_exit(name):
+    print(f"Would you like to play again, {name}?")
     print("Press y for yes, n for no")
     answer = input()
     if (answer == 'y'):
-        play_wordhunt()
+        clear_terminal()
+        play_wordhunt(name)
     else:
         exit(1)
 
