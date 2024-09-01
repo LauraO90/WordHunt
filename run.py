@@ -5,8 +5,18 @@ from animals import animal_words
 from plants import plant_words
 from planets import planet_words
 
+def ascii_wordhunt():
+    print(r""" 
+     _        __               ____  __            __ 
+    | |     / /___  _________/ / / / /_  ______  / /_
+    | | /| / / __ \/ ___/ __  / /_/ / / / / __ \/ __/
+    | |/ |/ / /_/ / /  / /_/ / __  / /_/ / / / / /_  
+    |__/|__/\____/_/   \__,_/_/ /_/\__,_/_/ /_/\__/ 
+    
+    """)
 
 def welcome():
+    ascii_wordhunt()
     print("Welcome to WordHunt!\n")
     print("How to play?")
     print("You will have a choice of THREE categories.")
