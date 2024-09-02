@@ -16,36 +16,77 @@ def ascii_wordhunt():
 
     """)
 
+
 def ascii_goodbye():
     print(r"""
-    
+
        ______                ____               __
       / ____/___  ____  ____/ / /_  __  _____  / /
-     / / __/ __ \/ __ \/ __  / __ \/ / / / _ \/ / 
-    / /_/ / /_/ / /_/ / /_/ / /_/ / /_/ /  __/_/  
-    \____/\____/\____/\__,_/_.___/\__, /\___(_)   
-                                 /____/           
+     / / __/ __ \/ __ \/ __  / __ \/ / / / _ \/ /
+    / /_/ / /_/ / /_/ / /_/ / /_/ / /_/ /  __/_/
+    \____/\____/\____/\__,_/_.___/\__, /\___(_)
+                                 /____/
 
-    """)                         
+    """)
+
+
+def ascii_instructions():
+    print(r"""
+
+        __  __                 __             ____  __           ___
+       / / / /___ _      __   / /_____       / __ \/ /___ ___  _/__ \
+      / /_/ / __ \ | /| / /  / __/ __ \     / /_/ / / __ `/ / / // _/
+     / __  / /_/ / |/ |/ /  / /_/ /_/ /    / ____/ / /_/ / /_/ //_/
+    /_/ /_/\____/|__/|__/   \__/\____/    /_/   /_/\__,_/\__, /(_)
+                                                        /____/
+    """)
+
+
+def instructions():
+    ascii_instructions()
+    print("- You will have a choice of THREE categories.\n")
+    print("- The categories include: plants, animals and planets.\n")
+    print("- Once you have chosen, you will be presented"
+          "with a word to guess.\n")
+    print("- Please ensure your guesses are single letters only.\n")
+    print("- The number of guesses is the number of letters"
+          "in the word plus two extra chances.\n")
+    print("Press 'r' key to return")
+    get_instructions_input()
+
+
+def get_instructions_input():
+    user_input = input()
+
+    if user_input == "r":
+        clear_terminal()
+        return welcome()
+    else:
+        print("Press 'r' key to return")
+        return get_instructions_input()
+
+
+def instructions_or_start():
+    user_input = input()
+    if user_input == "i":
+        instructions()
+    elif user_input == "s":
+        play_wordhunt()
+    else:
+        print("Please choose 's' or 'i' only")
+        return instructions_or_start()
+
 
 def welcome():
     ascii_wordhunt()
     print("Welcome to WordHunt!\n")
-    print("How to play?")
-    print("You will have a choice of THREE categories.")
-    print("Once you have chosen, you will be presented with a word to guess.")
-    print("Please ensure your guesses are single letters only.\n")
-    print("Happy hunting!\n")
+    print("Press 'i' for instructions or press 's' to start")
+
+    instructions_or_start()
 
 
 def enter_wordhunt():
     welcome()
-    print("Please type your name...")
-    name = get_username()
-    clear_terminal()
-
-    print("Good Luck, lets get started", name)
-    play_wordhunt(name)
 
 
 def get_username():
@@ -57,7 +98,14 @@ def get_username():
         return get_username()
 
 
-def play_wordhunt(name):
+def play_wordhunt():
+    clear_terminal()
+    print("Happy hunting!\n")
+    print("Please type your name...")
+    name = get_username()
+    clear_terminal()
+
+    print("Good Luck, lets get started", name)
     words = get_category_words()
     active_word = random.choice(words)
 
@@ -179,7 +227,7 @@ def restart_or_exit(name):
         clear_terminal()
         ascii_goodbye()
         exit(1)
-        
+
 
 def clear_terminal():
     os.system('cls || clear')
