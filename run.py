@@ -8,6 +8,7 @@ from ascii import ascii_wordhunt, ascii_instructions, ascii_goodbye
 
 
 def instructions():
+    clear_terminal()
     ascii_instructions()
     print("- You will have a choice of THREE categories.\n")
     print("- The categories include: plants, animals and planets.\n")
@@ -15,7 +16,7 @@ def instructions():
           " with a word to guess.\n")
     print("- Please ensure your guesses are single letters only.\n")
     print("- The number of guesses is the number of letters"
-          " in the word plus two extra chances.\n")
+          " in the word plus TWO more chances.\n")
     print("Press 'r' key to return")
     get_instructions_input()
 
