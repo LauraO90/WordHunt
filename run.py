@@ -116,12 +116,12 @@ def play_wordhunt():
         if current_status == active_word:
             clear_terminal()
             print("Well done - you found the word!\n")
-            print(current_status)
+            print(f"{current_status}\n")
             restart_or_exit(name)
 
     clear_terminal()
     print("Hard luck, you are out of guesses\n")
-    print(current_status)
+    print(f"{current_status}\n")
     print(f"The word was {active_word}\n")
     restart_or_exit(name)
 
