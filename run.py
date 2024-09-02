@@ -81,31 +81,31 @@ def play_wordhunt():
     active_word_length = len(active_word)
 
     print(f"Let's hunt - you have {number_guesses} "
-          "attempts to guess the word:")
-    print(f"Your word has {active_word_length} letters:")
+          "attempts to guess the word:\n")
+    print(f"Your word has {active_word_length} letters:\n")
 
     current_status = ''
     for x in range(active_word_length):
         current_status += ' _'
 
-    print(current_status.strip())
+    print(f"{current_status.strip()}\n")
 
     while number_attempts < number_guesses:
         current_status = get_current_status(active_word, guesses)
 
         if number_attempts > 0:
             clear_terminal()
-            print("So far you have found:")
-            print(current_status)
+            print("So far you have found:\n")
+            print(f"{current_status}\n")
             if (number_attempts is number_guesses - 1):
-                print(f"You have 1 guess left")
+                print(f"You have 1 guess left\n")
             else:
                 print(f"You have {number_guesses - number_attempts} "
-                      "guesses left")
+                      "guesses left\n")
 
-            print("Choose your next letter")
+            print("Choose your next letter\n")
         else:
-            print("Choose your first letter")
+            print("Choose your first letter\n")
 
         number_attempts += 1
 
@@ -115,14 +115,14 @@ def play_wordhunt():
 
         if current_status == active_word:
             clear_terminal()
-            print("Well done - you found the word!")
+            print("Well done - you found the word!\n")
             print(current_status)
             restart_or_exit(name)
 
     clear_terminal()
-    print("Hard luck, you are out of guesses")
+    print("Hard luck, you are out of guesses\n")
     print(current_status)
-    print("The word was", active_word)
+    print(f"The word was {active_word}\n")
     restart_or_exit(name)
 
 
@@ -144,14 +144,14 @@ def number_letters(word):
 def get_user_guess(existing_guesses):
     guess = input()
     if guess in existing_guesses:
-        print(f"You have already picked {guess}")
-        print("Try a new letter")
+        print(f"You have already picked {guess}\n")
+        print("Try a new letter\n")
         return get_user_guess(existing_guesses)
     elif not guess.isalpha():
-        print("Please choose a letter")
+        print("Please choose a letter\n")
         return get_user_guess(existing_guesses)
     elif len(guess) > 1:
-        print("Please choose one letter only")
+        print("Please choose one letter only\n")
         return get_user_guess(existing_guesses)
     else:
         return guess
@@ -178,13 +178,13 @@ def get_category_words():
         print("\nYou chose PLANETS\n")
         return planet_words
     else:
-        print("Please choose a valid category")
+        print("Please choose a valid category\n")
         return get_category_words()
 
 
 def restart_or_exit(name):
-    print(f"Would you like to play again, {name}?")
-    print("Press y for yes, n for no")
+    print(f"Would you like to play again, {name}?\n")
+    print("Press y for yes, n for no\n")
     answer = input()
     if (answer == 'y'):
         clear_terminal()
