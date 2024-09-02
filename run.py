@@ -5,15 +5,28 @@ from animals import animal_words
 from plants import plant_words
 from planets import planet_words
 
+
 def ascii_wordhunt():
-    print(r""" 
-     _        __               ____  __            __ 
+    print(r"""
+     _        __              ____  __            __
     | |     / /___  _________/ / / / /_  ______  / /_
     | | /| / / __ \/ ___/ __  / /_/ / / / / __ \/ __/
-    | |/ |/ / /_/ / /  / /_/ / __  / /_/ / / / / /_  
-    |__/|__/\____/_/   \__,_/_/ /_/\__,_/_/ /_/\__/ 
-    
+    | |/ |/ / /_/ / /  / /_/ / __  / /_/ / / / / /_
+    |__/|__/\____/_/   \__,_/_/ /_/\__,_/_/ /_/\__/
+
     """)
+
+def ascii_goodbye():
+    print(r"""
+    
+       ______                ____               __
+      / ____/___  ____  ____/ / /_  __  _____  / /
+     / / __/ __ \/ __ \/ __  / __ \/ / / / _ \/ / 
+    / /_/ / /_/ / /_/ / /_/ / /_/ / /_/ /  __/_/  
+    \____/\____/\____/\__,_/_.___/\__, /\___(_)   
+                                 /____/           
+
+    """)                         
 
 def welcome():
     ascii_wordhunt()
@@ -163,8 +176,10 @@ def restart_or_exit(name):
         clear_terminal()
         play_wordhunt(name)
     else:
+        clear_terminal()
+        ascii_goodbye()
         exit(1)
-
+        
 
 def clear_terminal():
     os.system('cls || clear')
