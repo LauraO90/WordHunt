@@ -16,7 +16,7 @@ def instructions():
           " with a word to guess.\n")
     print("- Please ensure your guesses are single letters only.\n")
     print("- The number of guesses is the number of letters"
-          " in the word plus TWO more chances.\n")
+          " in the word plus TWO chances.\n")
     print("Press 'r' key to return")
     get_instructions_input()
 
@@ -46,6 +46,7 @@ def instructions_or_start():
 def enter_wordhunt():
     ascii_wordhunt()
     print("Welcome to WordHunt!\n")
+    print("WordHunt is an interactive word guessing game.\n")
     print("Press 'i' for instructions or press 's' to start")
 
     instructions_or_start()
