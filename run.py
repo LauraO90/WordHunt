@@ -26,7 +26,7 @@ def get_instructions_input():
 
     if user_input == "r":
         clear_terminal()
-        return welcome()
+        return enter_wordhunt()
     else:
         print("Press 'r' key to return")
         return get_instructions_input()
@@ -39,20 +39,16 @@ def instructions_or_start():
     elif user_input == "s":
         play_wordhunt()
     else:
-        print("Please choose 's' or 'i' only")
+        print("Please choose 'i' or 's' only")
         return instructions_or_start()
 
 
-def welcome():
+def enter_wordhunt():
     ascii_wordhunt()
     print("Welcome to WordHunt!\n")
     print("Press 'i' for instructions or press 's' to start")
 
     instructions_or_start()
-
-
-def enter_wordhunt():
-    welcome()
 
 
 def get_username():
@@ -64,12 +60,13 @@ def get_username():
         return get_username()
 
 
-def play_wordhunt():
+def play_wordhunt(name=""):
     clear_terminal()
     print("Happy hunting!\n")
-    print("Please type your name...")
-    name = get_username()
-    clear_terminal()
+    if (not name):
+        print("Please type your name...")
+        name = get_username()
+        clear_terminal()
 
     print("Good Luck, lets get started", name)
     words = get_category_words()
