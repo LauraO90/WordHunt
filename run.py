@@ -4,7 +4,7 @@ import os
 from animals import animal_words
 from plants import plant_words
 from planets import planet_words
-from ascii import ascii_wordhunt, ascii_instructions, ascii_goodbye
+from ascii import ascii_wordhunt, ascii_instructions, ascii_trophy, ascii_goodbye
 
 
 def instructions():
@@ -114,6 +114,7 @@ def play_wordhunt(name=""):
             clear_terminal()
             print("Well done - you found the word!\n")
             print(f"{current_status}\n")
+            ascii_trophy()
             restart_or_exit(name)
 
     clear_terminal()
