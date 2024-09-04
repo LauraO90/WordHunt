@@ -4,7 +4,7 @@ import os
 from animals import animal_words
 from plants import plant_words
 from planets import planet_words
-from ascii import ascii_wordhunt, ascii_instructions, ascii_trophy, ascii_goodbye
+from ascii import ascii_wordhunt, ascii_instructions, ascii_trophy, ascii_bye
 
 
 def instructions():
@@ -47,7 +47,8 @@ def enter_wordhunt():
     ascii_wordhunt()
     print("Welcome to WordHunt!\n")
     print("WordHunt is an interactive word guessing game.\n")
-    print("Press 'i' for instructions or press 's' to start")
+    print("Are you ready to find all of the words?\n")
+    print("Press 'i' for instructions or press 's' to start playing.")
 
     instructions_or_start()
 
@@ -190,7 +191,7 @@ def restart_or_exit(name):
         play_wordhunt(name)
     else:
         clear_terminal()
-        ascii_goodbye()
+        ascii_bye()
         exit(1)
 
 

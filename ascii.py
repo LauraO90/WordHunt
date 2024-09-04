@@ -9,7 +9,7 @@ def ascii_wordhunt():
     """)
 
 
-def ascii_goodbye():
+def ascii_bye():
     print(r"""
 
        ______                ____               __
