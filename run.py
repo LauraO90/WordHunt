@@ -184,7 +184,7 @@ def get_category_words():
 
 def restart_or_exit(name):
     print(f"Would you like to play again, {name}?\n")
-    print("Press y for yes, n for no\n")
+    print("Press y for yes, or any other key to exit.\n")
     answer = input()
     if (answer == 'y'):
         clear_terminal()
@@ -192,6 +192,7 @@ def restart_or_exit(name):
     else:
         clear_terminal()
         ascii_bye()
+        print("See you again soon!")
         exit(1)
 
 
