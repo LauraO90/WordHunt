@@ -2,17 +2,16 @@
 
 ## Overview of project ##
 
-Welcome to WordHunt! WordHunt is an interactive Python based terminal game that provides an entertaining word guessing game with various categories.
+Welcome to WordHunt! WordHunt is a Python based terminal game that provides an entertaining word guessing game.
 
 Visit the deployed site: [WordHunt deployment](https://word-hunt-lo-22f0c19fc78e.herokuapp.com/)
 
 ## Initial planning ##
 
-WordHunt provides users with an interactive and menu-driven game. During the initial planning stage I used LucidChart:
-
+WordHunt provides users with an interactive, menu-driven game. During the initial planning stage I used LucidChart:
 ![Initial planning](documentation/wordhunt-lucidchart.png)
 
-As WordHunt developed, I decided to enhance this original plan by creating a more interactive and efficient experience for users. This involved welcoming users and offering them the option to see the game instructions before inputting their name and starting WordHunt.
+As WordHunt developed, I decided to enhance this original plan by creating a more interactive and informative experience for users. This involved welcoming users and offering them the option to see the game instructions before inputting their name and starting WordHunt. The game itself was developed as originally planned. 
 
 ## User Stories ##
 
@@ -31,45 +30,49 @@ As WordHunt developed, I decided to enhance this original plan by creating a mor
 
 ### How to Play ###
 
-The user is welcomed to the game and given the option to read the game instructions or start the game. 
+The user is welcomed to WordHunt and given the option to read the instructions or start the game. 
 
 ![Welcome](documentation/wordhunt-welcome.png)
 ![Instructions](documentation/wordhunt-instructions.png)
 
-When the decide to start the game, the user is asked to input their name. This is then used throughout the game to give the user feedback. The purpose of requiring the user to enter a name is to make the feedback more personal and engage the user. 
+When they enter the game, the user is asked to input their name. This is used throughout the game to give the user feedback. The purpose of requiring the user to enter a name is to make the feedback more personal and engaging. 
 
 ![Name](documentation/wordhunt-name.png)
 
-The user receives a good luck message and is presented with three categories: plants, animals and planets. These categories were chosen as they thematically relate to nature, earth and the Solar System, but are varied enough to offer users a variety of options and appeal to a wide range of people.
+The user receives a good luck message and is presented with three categories: plants, animals and planets. These categories were selected as they thematically relate to nature, Earth and the Solar System, but are varied enough to offer users different options and appeal to a wide range of people.
 
 ![Categories](documentation/wordhunt-categories.png)
 
-Once the user has selected a category they enter the game and can begin guessing. Due to the nature of the categories, the words are various lengths, for example in “Plants”, the smallest word “rose” has only four letters compared to the longest word, “sunflower” with nine letters. 
+Once the user has selected a category they enter the game and can begin guessing. Due to the nature of the categories, the words are various lengths, for example in "Plants", the smallest word "rose" has only four letters compared to the longest word, "sunflower" with nine letters. 
 
-To ensure the user has a fair chance at finding the words but also providing them with a challenge, the number of guesses is equal to the length of the word plus two more guesses. Therefore “rose” would have six guesses compared to “sunflower” with eleven guesses. I tried various options with the extra guesses and two provided the most entertainment and user satisfaction. 
+To ensure the user has a fair chance at finding the words, but also give them a challenge, the number of guesses is equal to the length of the word plus two more guesses. Therefore "rose" would have six guesses compared to "sunflower" with eleven guesses. Various number options were tested for the extra guesses and two provided the most entertainment and user satisfaction. The words are also presented in a random order to provide variety when playing WordHunt. 
 
-The user can see how many guesses they have and how many letters the word contains, this is accompanied by empty underlines showing the letters.
+The user can see how many guesses they have and how many letters the word contains before guessing, this is accompanied by empty underlines that will be updated as they guess correctly.
 
 ![Plants guesses](documentation/wordhunt-plants-guesses.png)
 
 
-If the user guesses a letter correctly, the letter is added to the correct space and the number of remaining guesses lowers with each guess. If the user guesses incorrectly, they are asked to chose their next letter and again the number of remaining guesses lowers with each guess. Users are given feedback if they enter the same letter twice or give an invalid character e.g. a number or special character. 
+If the user guesses a letter correctly, the letter is added to the correct space and the number of remaining guesses lowers with each guess. If the user guesses incorrectly, they are asked to choose their next letter and again the number of remaining guesses lowers with each guess. 
 
 ![Correct guess](documentation/wordhunt-correct-guess.png)
 ![Incorrect guess](documentation/wordhunt-incorrect-guess.png)
+
+Users are given feedback if they enter the same letter twice, type two letters or give an invalid character e.g. a number or special character. In this example, the number "1" and two letters "hh" each receive the relevant feedback:
+
 ![Invalid character](documentation/wordhunt-invalid.png)
 
-When the user correctly guesses a word within the number of guesses allowed, they receive a well done message alongside the correctly guessed word, and an ASCII art trophy.
+When the user correctly guesses a word, they receive a well done message alongside the correctly guessed word, and an ASCII art trophy.
 
 ![Correct answer](documentation/wordhunt-well-done.png)
 
-When the user does not guess the word within the number of guesses allowed, they receive a hard luck message alongside the correct word.
+When the user does not guess the word within the number of guesses allotted, they receive a hard luck message alongside the correct word.
 
 ![Incorrect answer](documentation/wordhunt-hard-luck.png)
 
-Both successful and unsuccessful players are invited to play the game again. If users choose yes, they are presented with the categories and enter the game again. This allows them the option of choosing the same category or trying something new to maintain their interest. 
+Both successful and unsuccessful players are invited to play the game again. If users choose yes, they are presented with the categories and enter the game again. This allows them the option of choosing the same category or trying something new to hold their interest. 
 
 If users enter any other key, they receive a Goodbye message encouraging them to come back soon. 
+
 ![Goodbye](documentation/wordhunt-goodbye.png)
 
 ### Future Development ###
@@ -82,7 +85,7 @@ Possible upgrades I would like to implement include:
 
 ### CI Python Linter ###
 
-All passed with no errors:
+All code passed with no errors:
 
 ![CI Python Linter testing](documentation/wordhunt-validator.png)
 
@@ -90,17 +93,17 @@ All passed with no errors:
 
 Each feature has been tested thoroughly and each gives the expected outcome:
 
-- When users press “i" they are taken to the game instructions: pass.
-- When users press “r” in the instructions they return to the welcome page: pass.
-- When users press “s"they enter the game: pass.
-- Users receive feedback (Please choose 'i' or 's' only) if they do not press either option: pass
-- Users must enter a name to enter the game, and receive feedback ("Please enter at least two letters”) if they press enter or give only one letter or numbers: pass.
-- When users select a category “a”, “b”, or “c" they are taken into the relevant category game, and are given feedback to choose a valid category if they give a different letter or a number: pass.
+- When users press "i" they are taken to the game instructions: pass.
+- When users press "r" in the instructions they return to the welcome page: pass.
+- When users press "s" they enter the game: pass.
+- Users receive feedback (Please choose 'i' or 's' only) if they do not press either option: pass.
+- Users must type a name to enter the game, and receive feedback ("Please enter at least two letters") if they press enter, give only one letter or a number: pass.
+- When users select category "a", "b", or "c", they enter the relevant category game, and are given feedback to choose a valid category if they give a different letter or a number: pass.
 - When users start playing they know how many guesses they start with and the number decreases with each guess: pass.
-- During the game, users are given various types of feedback to ensure they only choose one letter (“Please choose a letter”, "You have already picked _”, “Try a new letter”, “Please choose one letter only”): pass. 
-- When the user correctly guesses a word within the number of guesses allowed, they receive a well done message alongside the correctly guessed word, and an ASCII art trophy: pass.
-- When the user does not guess the word within the number of guesses allowed, they receive a hard luck message alongside the correct word: pass.
-- When users press “y” at the end of the game, they enter the game again: pass.
+- During the game, users are given feedback to ensure they only choose one letter and don't repeat letters ("Please choose a letter", "You have already picked _", "Try a new letter", "Please choose one letter only"): pass. 
+- When the user correctly guesses a word, they receive a well done message alongside the correctly guessed word, and an ASCII art trophy: pass.
+- When the user does not guess the word within the number of guesses allotted, they receive a hard luck message alongside the correct word: pass.
+- When users press "y" at the end of the game, they enter the game again: pass.
 - When users enter any other key, they receive a Goodbye message and exit the game: pass.
 
 ## Deployment ##
@@ -112,7 +115,7 @@ WordHunt was created using Gitpod Enterprise and Heroku has been used to deploy 
 The steps to deploy through Heroku are as follows:
 - Log into Heroku or create an account.
 - Select Settings and enter the app name.
-- Select build packs for python and Node.js.
+- Select build packs for Python and Node.js.
 - Select Deploy and choose GitHub for Deployment Method. 
 - Connect to GitHub and enable Automatic Deploys so each push command (- `git push) to GitHub deploys on the live app/site. 
 
